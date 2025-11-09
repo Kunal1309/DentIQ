@@ -36,8 +36,8 @@
   --sidebar-accent-foreground: #2a2a4a;
   --sidebar-border: #e0e0f0;
   --sidebar-ring: #6e56cf;
-  --font-sans: Inter, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-sans: Geist Mono, ui-monospace, monospace;
+  --font-serif: serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.5rem;
   --shadow-x: 0px;
@@ -91,8 +91,8 @@
   --sidebar-accent-foreground: #e2e2f5;
   --sidebar-border: #303052;
   --sidebar-ring: #a48fff;
-  --font-sans: Inter, sans-serif;
-  --font-serif: Georgia, serif;
+  --font-sans: Geist Mono, ui-monospace, monospace;
+  --font-serif: serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.5rem;
   --shadow-x: 0px;
@@ -174,5 +174,13 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/*  Add cursor pointer to buttons by default - this is commming from tailwind css */
+@layer base{
+  button:not(:disabled),
+  [role="button"]:not(:disabled){
+    cursor: pointer;
   }
 }
