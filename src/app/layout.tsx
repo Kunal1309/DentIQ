@@ -10,6 +10,7 @@ import {
   UserButton,
 } from '@clerk/nextjs'
 import UserSync from "@/components/UserSync";
+import TanStackProvider from "@/components/providers/TanStackProviders";
 
 
 const geistSans = Geist({
@@ -33,7 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ClerkProvider appearance={{variables:{colorPrimary:"#a48fff", colorBackground: "#f3f4f6", colorText:"#111827", colorTextSecondary:"#6b7280", colorInputBackground:"#f3f4f6"}}}>
+    <TanStackProvider>
+      <ClerkProvider appearance={{variables:{colorPrimary:"#a48fff", colorBackground: "#f3f4f6", colorText:"#111827", colorTextSecondary:"#6b7280", colorInputBackground:"#f3f4f6"}}}>
       <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark`}
@@ -43,5 +45,6 @@ export default function RootLayout({
       </body>
     </html>
     </ClerkProvider> 
+    </TanStackProvider>
   );
 }
