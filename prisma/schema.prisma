@@ -21,7 +21,7 @@ model User{
   lastName  String?
   phone     String?
   createdAt DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  updatedAt DateTime @updatedAt
   //relationships
   appointments Appointment[]
 
