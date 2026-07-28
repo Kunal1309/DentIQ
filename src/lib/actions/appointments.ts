@@ -59,6 +59,9 @@ export async function getUserAppointments() {
 
     return appointments.map(transformAppointment);
   } catch (error) {
+    if (error instanceof Error && (error as any).digest === "DYNAMIC_SERVER_USAGE") {
+      throw error;
+    }
     console.error("Error fetching user appointments:", error);
     throw new Error("Failed to fetch user appointments");
   }
@@ -91,6 +94,9 @@ export async function getUserAppointmentStats() {
       completedAppointments: completedCount,
     };
   } catch (error) {
+    if (error instanceof Error && (error as any).digest === "DYNAMIC_SERVER_USAGE") {
+      throw error;
+    }
     console.error("Error fetching user appointment stats:", error);
     return { totalAppointments: 0, completedAppointments: 0 };
   }
